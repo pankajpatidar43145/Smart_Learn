@@ -41,9 +41,12 @@ exports.sendOTP = async (req, res) => {
       console.error(error);
       return res.status(500).json({ message: "Failed to send OTP" });
     }
-    console.log("Email sent: " + info.response);
+
+    // Return the OTP in the response
+    return res.status(200).json({ message: "OTP sent successfully", otp });
   });
 };
+
 
 // Controller function to verify OTP (You should add your OTP verification logic here)
 exports.verifyOTP = (req, res) => {
