@@ -42,21 +42,6 @@ exports.sendOTP = async (req, res) => {
       return res.status(500).json({ message: "Failed to send OTP" });
     }
     console.log("Email sent: " + info.response);
-
-    try {
-      // Make a POST request to the /verifyRoutes/storeotp API to store the email and OTP
-      await axios.post("http://localhost:5000/verifyRoutes/storeotp", {
-        email,
-        otp,
-      });
-
-      return res
-        .status(200)
-        .json({ message: "OTP sent successfully and stored." });
-    } catch (storeError) {
-      console.error(storeError);
-      return res.status(500).json({ message: "Failed to store OTP" });
-    }
   });
 };
 
