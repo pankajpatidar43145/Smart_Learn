@@ -23,7 +23,7 @@ app.use(cors());
 
 // Connect to MongoDB
 mongoose
-    .connect("mongodb://127.0.0.1:27017/btp", {
+    .connect("mongodb+srv://pankajpatidar43145:wwul7sxylO4jReJi@smartlearn.i6ruapn.mongodb.net/?retryWrites=true&w=majority", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
